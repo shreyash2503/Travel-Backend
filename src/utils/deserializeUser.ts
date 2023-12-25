@@ -59,6 +59,7 @@ export const protect = catchAsync(
 
     req.user = freshUser as UserDocument;
     res.locals.user = freshUser as UserDocument;
+
     next();
   }
 );

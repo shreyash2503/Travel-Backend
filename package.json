@@ -21,6 +21,7 @@
     "mongoose": "^8.0.3",
     "pino": "^8.17.1",
     "pino-pretty": "^10.3.0",
+    "slugify": "^1.6.6",
     "validator": "^13.11.0",
     "zod": "^3.22.4"
   },
