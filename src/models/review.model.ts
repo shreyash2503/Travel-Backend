@@ -15,6 +15,8 @@ const reviewSchema = new mongoose.Schema<ReviewDocument>(
     review: {
       type: String,
       required: [true, "A review must have a description"],
+      minLength: [10, "A review must have atleast 10 characters"],
+      maxlength: [1000, "A review must have less than 1000 characters"],
     },
     rating: {
       type: Number,
@@ -53,6 +55,7 @@ reviewSchema.pre<Query<ReviewDocument, ReviewDocument>>(
       path: "user",
       select: "name photo",
     });
+    this.select("-__v -createdAt -updatedAt");
     next();
   }
 );

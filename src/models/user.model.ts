@@ -13,7 +13,7 @@ import crypto from "crypto";
 export interface UserDocument extends mongoose.Document {
   name: string;
   email: string;
-  photo: string;
+  image: string;
   role: string;
   password: string | undefined;
   passwordConfirm: string | undefined;
@@ -42,7 +42,7 @@ const userSchema = new mongoose.Schema<UserDocument>(
       unique: true,
       lowercase: true,
     },
-    photo: {
+    image: {
       type: String,
       default: "default.jpg",
     },

@@ -84,6 +84,12 @@ const placeSchema = new mongoose.Schema<PlaceDocument>(
 
 placeSchema.index({ slug: 1 });
 
+placeSchema.virtual("reviews", {
+  ref: "Review",
+  foreignField: "place",
+  localField: "_id",
+});
+
 placeSchema.pre("save", function (this: PlaceDocument, next) {
   this.slug = slugify(this.name, { lower: true });
   next();

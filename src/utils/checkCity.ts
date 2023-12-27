@@ -34,7 +34,6 @@ const checkCity = catchAsync(
       address: result.data[0].address,
       iatCode: result.data[0].iataCode,
     };
-    req.body.user = res.locals.user._id;
 
     next();
   }
