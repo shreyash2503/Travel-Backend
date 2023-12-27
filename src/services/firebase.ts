@@ -1,6 +1,4 @@
-import firebase from "firebase/compat/app";
 import config from "config";
+import * as firebase from "firebase/app";
 
-const db = firebase.initializeApp(config.get<Object>("FIREBASE_CONFIG"));
-
-export default db;
+export default firebase.initializeApp(config.get("FIREBASE_CONFIG"));
